@@ -63,10 +63,10 @@ gulp.task('build:service', function () {
     .pipe(rename('config/service.js'))
     .pipe(gulp.dest('dist/'))
 })
-gulp.task('build', ['build:style', 'build:app', 'build:service'])
 gulp.task('bower', function () {
   return bower('./src/vendor')
-    .pipe(gulp.dest('dist/vendor'))
+  .pipe(gulp.dest('dist/vendor'))
 })
 
+gulp.task('build', ['bower', 'build:style', 'build:app', 'build:service'])
 gulp.task('default', ['watch', 'build'])
