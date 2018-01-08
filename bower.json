@@ -1,0 +1,27 @@
+{
+    "name": "weapp",
+    "description": "weapp",
+    "main": "app.js",
+    "authors": [
+      "Weber Liu"
+    ],
+    "license": "MIT",
+    "keywords": [
+      "qcloud",
+      "wechat",
+      "weapp",
+      "yzg"
+    ],
+    "homepage": "https://github.com/weberliu/weapp-skeleton",
+    "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+    ],
+    "dependencies": {
+      "wafer-client-sdk": "*",
+      "weapp-promise": "https://github.com/weberliu/weapp-promise.git"
+    }
+  }

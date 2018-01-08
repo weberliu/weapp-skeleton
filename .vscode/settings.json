@@ -1,0 +1,17 @@
+{
+    "editor.tabSize": 2,
+    "standard.enable": true,
+    "files.associations": {
+      "*.es": "javascriptreact",
+      "*.wxml": "html",
+      "*.wxss": "css"
+    },
+    "standard.options": {
+      "globals": [
+        "App", "wx", "Page", "debug", "getApp"
+      ],
+      "ignore": [
+        "vendor/**", "app/pages/*.wxml"
+      ]
+    }
+  }
