@@ -12,6 +12,7 @@ var env = process.env.NODE_ENV || 'development'
 gulp.task('watch', function () {
   gulp.watch('src/**', ['build:style', 'build:app'])
 })
+
 gulp.task('build:style', function () {
   var banner = [
     '/*!',
@@ -21,8 +22,9 @@ gulp.task('build:style', function () {
     ' */',
     ''
   ].join('\n')
+
   gulp
-    .src(['src/style/weui.wxss', 'src/app/*.wxss'], { base: 'src' })
+    .src([ 'src/app.wxss', 'src/app/**/*.wxss' ], { base: 'src' })
     .pipe(less())
     .pipe(postcss([autoprefixer(['iOS >= 8', 'Android >= 4.1'])]))
     .pipe(
@@ -43,16 +45,20 @@ gulp.task('build:style', function () {
 gulp.task('build:app', function () {
   gulp
     .src(
-    [
-      'src/app.js',
-      'src/app.json',
-      'src/app.wxss',
-      'src/app/**',
-      '!src/app/*.wxss',
-      'src/config.js',
-      'src/config/**',
-      '!src/config/service.*'
-    ],
+      [
+        'src/app.*',
+        '!src/app/*.wxss',
+
+        'src/components/**',
+        '!src/components/**/*.wxss',
+
+        'src/images/**',
+        'src/lib/**',
+        'src/pages/**',
+        'src/config.js',
+        'src/config/**',
+        '!src/config/service.*'
+      ],
       { base: 'src' }
     )
     .pipe(gulp.dest('dist'))
@@ -65,8 +71,8 @@ gulp.task('build:service', function () {
 })
 gulp.task('bower', function () {
   return bower('./src/vendor')
-  .pipe(gulp.dest('dist/vendor'))
+    .pipe(gulp.dest('dist/vendor'))
 })
-
 gulp.task('build', ['bower', 'build:style', 'build:app', 'build:service'])
+
 gulp.task('default', ['watch', 'build'])
