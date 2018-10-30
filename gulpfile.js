@@ -49,12 +49,11 @@ gulp.task('build:app', function () {
         'src/app.*',
         '!src/app/*.wxss',
 
-        'src/components/**',
-        '!src/components/**/*.wxss',
-
         'src/images/**',
         'src/lib/**',
-        'src/pages/**',
+        'src/app/**',
+        '!src/app/**/*.wxss',
+
         'src/config.js',
         'src/config/**',
         '!src/config/service.*'

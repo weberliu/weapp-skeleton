@@ -2663,6 +2663,10 @@ vinyl@^0.5.0:
     clone-stats "^0.0.1"
     replace-ext "0.0.1"
 
+wafer-client-sdk@^0.8.4:
+  version "0.8.4"
+  resolved "http://registry.npm.taobao.org/wafer-client-sdk/download/wafer-client-sdk-0.8.4.tgz#598925d9b002d08e5f633b1fec55df756ab95582"
+
 walk@2.3.3:
   version "2.3.3"
   resolved "http://registry.npm.taobao.org/walk/download/walk-2.3.3.tgz#b4c0e8c42464c16dbbe1d71666765eac07819e5f"
